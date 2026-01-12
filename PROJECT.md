@@ -8,9 +8,9 @@ A protocol where users stake cryptocurrency on belief statements to create publi
 
 ## Current Status
 
-**Phase:** Contracts deployed + escrow staking working on Base Sepolia (no yield yet)
+**Phase:** Testnet integration (attestation + stake flow working on Base Sepolia)
 **Tests:** Foundry tests written and passing for `BeliefStake.sol`
-**Next:** Register EAS schema on Base Sepolia and set `NEXT_PUBLIC_BELIEF_SCHEMA_UID`, then build a minimal frontend create+stake flow
+**Next:** Build minimal frontend for create+stake flow
 
 ## Technical Architecture
 
@@ -114,9 +114,9 @@ $2 stake is 10-20x larger than gas costs - gas not a barrier.
 
 **Contracts:**
 
-- [ ] EAS schema registered on Base Sepolia
+- [x] EAS schema registered on Base Sepolia
 - [x] BeliefStake.sol deployed (escrow only, no yield yet)
-- [ ] 10 test beliefs created
+- [x] 1 test belief created (need 9 more)
 
 **Frontend:**
 
@@ -134,12 +134,27 @@ $2 stake is 10-20x larger than gas costs - gas not a barrier.
 
 ## Development Setup
 
-**Contract Addresses (Base Sepolia):**
+## Contract Addresses & Important Info
 
+**Network:** Base Sepolia (Chain ID: 84532)
+
+**Deployed Contracts:**
 - EAS Registry: 0x4200000000000000000000000000000000000021
-- Belief Schema UID: (not yet registered)
+- EAS Schema UID: 0x21f7fcf4af0c022d3e7316b6a5b9a04dcaedac59eaea803251e653abd1db9fd6
 - MockUSDC: 0xA5c82FCFBe1274166D01B1f3cd9f69Eb79bd74E8
 - BeliefStake: 0xa37c9A89375134374a866EeD3E57EAF2789d9613
+
+**Development Wallet:**
+- Address: 0x7A7798cdc11cCeFDaa5aA7b07bb076280a4e4c3F
+
+**Test Data:**
+- Genesis Belief UID: 0x52314b57ebbe83ebe00c02aa3a74df3cf1a55acd682318f7d88777945aa5c1dd
+- Genesis Belief Text: "costly signals prove conviction"
+- First Stake: $2 USDC by 0x7A7798cdc11cCeFDaa5aA7b07bb076280a4e4c3F
+
+**Contract Addresses (Base Sepolia):**
+
+See **Contract Addresses & Important Info** above.
 
 **Environment Variables:**
 
@@ -170,7 +185,7 @@ PRIVATE_KEY=
 **Session 3 (January 9, 2026):**
 
 - Wrote and passed all Foundry tests for BeliefStake.sol
-- Set up testnet wallet (0x7a77...)
+- Set up testnet wallet (dev wallet)
 - Learned critical security lesson: never paste private keys in commands
 - Set up .env file for environment variables
 - Hit confusion with .env variable naming conventions (NEXT_PUBLIC_ vs plain vars)
@@ -186,6 +201,15 @@ PRIVATE_KEY=
 - Tested contract functionality: staked $2 on test attestation UID, verified with getStake()
 - Contract is live and working on testnet!
 - Next: Register EAS schema, build frontend
+
+**Session 5 (January 12, 2026):**
+
+- Registered EAS schema on Base Sepolia (non-revocable, single field: `string belief`)
+- Created genesis belief attestation: "Costly beliefs are more credible than free words"
+- Minted MockUSDC and successfully staked $2 on genesis belief
+- Verified full attestation + stake flow works end-to-end on testnet
+- Updated testnet wallet address to correct value: 0x7A7798cdc11cCeFDaa5aA7b07bb076280a4e4c3F
+- Next: Build minimal frontend for create+stake flow
 
 ## Repository Structure
 
@@ -221,4 +245,4 @@ onrecord/
 
 **Last Updated:** January 12, 2026
 **Current Phase:** Testnet integration (schema + minimal frontend)
-**Next Action:** Register EAS schema on Base Sepolia, then wire `NEXT_PUBLIC_BELIEF_SCHEMA_UID` into the frontend
+**Next Action:** Build minimal frontend for create+stake flow
