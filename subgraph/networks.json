@@ -1,0 +1,8 @@
+{
+  "base-sepolia": {
+    "BeliefStake": {
+      "address": "0xa37c9A89375134374a866EeD3E57EAF2789d9613",
+      "startBlock": 36069795
+    }
+  }
+}
