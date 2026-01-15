@@ -292,6 +292,7 @@ body {
   .belief-core {
     width: 100%;
     flex-direction: column;
+    flex: 0 0 auto;
   }
 
   .belief-amount {
@@ -309,6 +310,9 @@ body {
     order: 2;
     padding: 8px 12px;
     min-height: auto;
+    flex: 0 0 auto;
+    align-items: flex-start;
+    display: block;
   }
 
   .compose-input {
