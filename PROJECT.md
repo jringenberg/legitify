@@ -1,4 +1,4 @@
-# Legitify
+# Believeth
 
 ## Core Concept
 
@@ -65,11 +65,11 @@ User stakes $2 → BeliefStake receives USDC → Deposits to Aave → Tracks aUS
 - **All yield to protocol**: No user yield-sharing, pure treasury revenue model
 - **Primary signal is staker count**: Total stake is secondary - 847 people matters more than total dollars
 - **No belief-gating of data**: Everything on-chain is public, gate participation not viewing
-- **"OnRecord" as name**: "I put it on record" → "I put it on OnRecord" - understated, permanent, action-oriented
+- **"Believeth" as name**: Archaic/Biblical form of "believe" - suggests conviction, testimony, putting your beliefs on record
 
 ### Naming & Copy
 
-- **Brand:** OnRecord (onrecord.xyz)
+- **Brand:** Believeth (believeth.xyz)
 - **Main feed:** "Popular Beliefs" (not repeated elsewhere)
 - **Action verbs:** "Back This" / "Co-Sign" (not "stake" in UI)
 - **Tagline direction:** "Put your money where your beliefs are" / "Words are cheap. Prove what you believe."
@@ -214,7 +214,7 @@ PRIVATE_KEY=
 ## Repository Structure
 
 ```text
-onrecord/
+believeth/
 ├── PROJECT.md              # This file - single source of truth
 ├── README.md               # Public-facing documentation
 ├── contracts/              # Smart contracts

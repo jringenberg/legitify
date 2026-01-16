@@ -10,11 +10,16 @@ const walletConnectProjectId =
   'f663d58e37395d5dad4d6ba0fe9fd134';
 
 const config = getDefaultConfig({
-  appName: 'OnRecord',
+  appName: 'Believeth',
   projectId: walletConnectProjectId,
   chains: [baseSepolia],
   ssr: true,
 });
+
+const appInfo = {
+  appName: 'Believeth',
+  learnMoreUrl: 'https://believeth.xyz',
+};
 
 const queryClient = new QueryClient();
 
@@ -22,7 +27,9 @@ export function Providers({ children }: { children: React.ReactNode }) {
   return (
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <RainbowKitProvider>{children}</RainbowKitProvider>
+        <RainbowKitProvider appInfo={appInfo} initialChain={baseSepolia}>
+          {children}
+        </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );

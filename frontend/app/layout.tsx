@@ -3,7 +3,7 @@ import './globals.css';
 import { Providers } from './providers';
 
 export const metadata: Metadata = {
-  title: 'OnRecord',
+  title: 'Believeth',
   description: 'Stake on beliefs',
 };
 
